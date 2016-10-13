@@ -1,10 +1,75 @@
 VstoneMagic Build&Execute Message Log
-BuildStart time:2016/10/13 18:11:32
+BuildStart time:2016/10/13 18:43:02
 ビルドを開始します。
 C:\Program Files (x86)\VstoneMagic\jdk\bin\javac.exe  -d "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\bin"  -g  -cp ".;C:\Users\makino\VstoneMagicData\jar\commons-codec-1.10.jar;C:\Users\makino\VstoneMagicData\jar\core-2.2.jar;C:\Users\makino\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\makino\VstoneMagicData\jar\javase-2.2.jar;C:\Users\makino\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\makino\VstoneMagicData\jar\opencv-310.jar;C:\Users\makino\VstoneMagicData\jar\sotalib.jar;C:\Users\makino\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-async-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-core-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-examples-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-media-support-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-stream-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-async-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-core-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-examples-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-media-support-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-stream-4.0.4.jar"  -encoding UTF-8 "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\src\main\main.java" "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\src\jp\co\mysota\mymain.java" 
-C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\src\jp\co\mysota\mymain.java:1038: エラー: シンボルを見つけられません
-		Core.putText(mat, "2016/10/13", new Point(1850, 1900), Core.FONT_HERSHEY_SIMPLEX, 3.0, new Scalar(20, 0, 200), 6);
-		    ^
-  シンボル:   メソッド putText(Mat,String,Point,int,double,Scalar,int)
-  場所: クラス Core
-エラー1個
+
+正常にコンパイルできました。
+
+jarファイルの作成
+マニフェストファイルを作成します。
+jarファイルを作成します。
+C:\Program Files (x86)\VstoneMagic\jdk\bin\jar.exe cvfm labSota.jar Manifest.mf main jp\co\mysota
+マニフェストが追加されました
+main/を追加中です(入=0)(出=0)(0%格納されました)
+main/main$GlobalVariable.classを追加中です(入=1893)(出=874)(53%収縮されました)
+main/main.classを追加中です(入=2187)(出=1187)(45%収縮されました)
+jp/co/mysota/を追加中です(入=0)(出=0)(0%格納されました)
+jp/co/mysota/face.classを追加中です(入=5417)(出=2885)(46%収縮されました)
+jp/co/mysota/faceRegistration.classを追加中です(入=3229)(出=1741)(46%収縮されました)
+jp/co/mysota/mymain.classを追加中です(入=18732)(出=8645)(53%収縮されました)
+
+jarファイルを作成しました。
+
+送信ファイルの上書き確認
+
+スタートアップアプリケーションの停止
+echo "STOP_STARTUP" > /home/vstone/vstonemagic/menu.fifoロボットのSFTPへ接続します。
+192.168.1.48@root
+......
+
+
+ファイルの転送
+ロボットにファイルを転送します。
+Connect to 192.168.1.48@root...接続しました。
+ファイルの転送を開始します。
+No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-async-4.0.4.jar'
+No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-core-4.0.4.jar'
+No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-examples-4.0.4.jar'
+No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-media-support-4.0.4.jar'
+No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-stream-4.0.4.jar'
+Send':'labSota.jar'. completed
+
+
+アプリケーション登録用のアーカイブファイルを作成
+......
+ビルドが完了しました。
+
+
+jarファイルの実行
+ロボットのSSHへ接続します。
+192.168.1.48@root
+java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar labSota.jar 2>&1 &ファイルの転送が完了しました。java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar labSota.jar 2>&1 &
+[1;32mroot@edison:~$[m java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar labSota.jar 2>&1 &
+[1] 763
+[1;32mroot@edison:~$[m デバッグの準備ができました。
+
+jdbの実行
+デバッガを起動します。
+C:\Program Files (x86)\VstoneMagic\jdk\bin\jdb.exe -connect com.sun.jdi.SocketAttach:hostname=192.168.1.48,port=8765
+Listening for transport dt_socket at address: 8765
+捕捉されないjava.lang.Throwableの設定遅延した捕捉されないjava.lang.Throwableの設定jdbの初期化中...デバッグ実行のスタンバイができました。
+> VMが開始されました: 現在のコール・スタックにフレームがありません[Info][CRoboCamera]class jp.vstone.RobotLib.CSotaMotion
+[Info][SpeechRecog]SpeechRecog
+[Info][CRobotSock]Connected server
+[Info][CRobotMotion]MasterCtrlPeriod 16666
+Take photo standby...
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1476343397003.wav
+[Info][CPlayWave]Play /var/sota/tts//1476343397003.wav
+[Info][CRoboCamera]initStill
+[Info][CRoboCamera]StartTask MODE_STILL_PIC
+[Info][stillpicture]save picthre file to "/var/sota/photo/test"
+Processing start...
+main[1] > アプリケーションが終了しましたexitexit
+logout
+
+ロボットとの通信を切断しました。

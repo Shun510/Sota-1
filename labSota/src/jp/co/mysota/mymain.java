@@ -26,6 +26,7 @@ import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.imgproc.Imgproc;
 
 public class mymain
 {
@@ -1035,7 +1036,7 @@ public class mymain
 		Mat mat = new Mat();
 
 		mat = Imgcodecs.imread(path_in);
-		Core.putText(mat, "2016/10/13", new Point(1850, 1900), Core.FONT_HERSHEY_SIMPLEX, 3.0, new Scalar(20, 0, 200), 6);
+		Imgproc.putText(mat, "2016/10/13", new Point(1850, 1900), Core.FONT_HERSHEY_SIMPLEX, 3.0, new Scalar(20, 0, 200), 6);
 		Imgcodecs.imwrite(path_out, mat);
 																														//@<EndOfBlock/>
 																														//@</OutputChild>
