@@ -136,7 +136,7 @@
 	</_import>
 	<_isDisableCollidionDetect>false</_isDisableCollidionDetect>
 	<_isSetAutoExecute>false</_isSetAutoExecute>
-	<_mainFuncName>jp.co.mysota.mymain.photo()</_mainFuncName>
+	<_mainFuncName>jp.co.mysota.mymain.drawOnPhoto()</_mainFuncName>
 	<_manifestClassPath xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
 	<_target>Sota</_target>
 	<_templeteMainClassFilePath>src\mainTemplete.source</_templeteMainClassFilePath>
