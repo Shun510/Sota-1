@@ -118,20 +118,25 @@
 		<d2p1:string>jp.vstone.camera.FaceDetectLib.*</d2p1:string>
 		<d2p1:string>jp.vstone.sotatalk.*</d2p1:string>
 		<d2p1:string>java.util.Random</d2p1:string>
-		<d2p1:string>java.nio.file.FileSystems</d2p1:string>
-		<d2p1:string>java.nio.file.FileSystem</d2p1:string>
-		<d2p1:string>java.nio.file.Path</d2p1:string>
 		<d2p1:string>twitter4j.Status</d2p1:string>
 		<d2p1:string>twitter4j.Twitter</d2p1:string>
 		<d2p1:string>twitter4j.TwitterException</d2p1:string>
 		<d2p1:string>twitter4j.TwitterFactory</d2p1:string>
 		<d2p1:string>twitter4j.User</d2p1:string>
 		<d2p1:string>twitter4j.conf.*</d2p1:string>
+		<d2p1:string>java.nio.file.FileSystems</d2p1:string>
+		<d2p1:string>java.nio.file.FileSystem</d2p1:string>
+		<d2p1:string>java.nio.file.Path</d2p1:string>
 		<d2p1:string>twitter4j.StatusUpdate</d2p1:string>
+		<d2p1:string>org.opencv.core.Core</d2p1:string>
+		<d2p1:string>org.opencv.core.Mat</d2p1:string>
+		<d2p1:string>org.opencv.core.Point</d2p1:string>
+		<d2p1:string>org.opencv.core.Scalar</d2p1:string>
+		<d2p1:string>org.opencv.imgcodecs.Imgcodecs</d2p1:string>
 	</_import>
 	<_isDisableCollidionDetect>false</_isDisableCollidionDetect>
 	<_isSetAutoExecute>false</_isSetAutoExecute>
-	<_mainFuncName>jp.co.mysota.mymain.tweetSpeak()</_mainFuncName>
+	<_mainFuncName>jp.co.mysota.mymain.photo()</_mainFuncName>
 	<_manifestClassPath xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
 	<_target>Sota</_target>
 	<_templeteMainClassFilePath>src\mainTemplete.source</_templeteMainClassFilePath>
@@ -3520,23 +3525,7 @@
 			</PoseSlider>
 		</sliders>
 	</poseAreaPropaty>
-	<resourcePath xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
-		<d2p1:string>NG.wav</d2p1:string>
-		<d2p1:string>OK.wav</d2p1:string>
-		<d2p1:string>OPEN.wav</d2p1:string>
-		<d2p1:string>MEN.wav</d2p1:string>
-		<d2p1:string>CallA.wav</d2p1:string>
-		<d2p1:string>CallB.wav</d2p1:string>
-		<d2p1:string>CallC.wav</d2p1:string>
-		<d2p1:string>CallD.wav</d2p1:string>
-		<d2p1:string>CallE.wav</d2p1:string>
-		<d2p1:string>CallF.wav</d2p1:string>
-		<d2p1:string>CallG.wav</d2p1:string>
-		<d2p1:string>CallH.wav</d2p1:string>
-		<d2p1:string>writeTest.txt</d2p1:string>
-		<d2p1:string>動作ログ.txt</d2p1:string>
-		<d2p1:string>OCtest.txt</d2p1:string>
-	</resourcePath>
+	<resourcePath xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
 	<robotUsers>
 		<RobotUser>
 			<MotRecv>
@@ -3626,9 +3615,9 @@
 				</uintID>
 			</MotSend>
 			<debugPort>8765</debugPort>
-			<host>192.168.0.0</host>
+			<host>192.168.1.14</host>
 			<password>raspberry</password>
-			<platform>RaspberryPi</platform>
+			<platform>Unknown</platform>
 			<rootPath>/home/pi/</rootPath>
 			<sshPort>22</sshPort>
 			<username>pi</username>

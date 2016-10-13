@@ -12,16 +12,21 @@ import jp.vstone.camera.*;
 import jp.vstone.camera.FaceDetectLib.*;
 import jp.vstone.sotatalk.*;
 import java.util.Random;
-import java.nio.file.FileSystems;
-import java.nio.file.FileSystem;
-import java.nio.file.Path;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.User;
 import twitter4j.conf.*;
+import java.nio.file.FileSystems;
+import java.nio.file.FileSystem;
+import java.nio.file.Path;
 import twitter4j.StatusUpdate;
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.Point;
+import org.opencv.core.Scalar;
+import org.opencv.imgcodecs.Imgcodecs;
 
 
 public class main
@@ -51,7 +56,7 @@ public class main
 			jp.co.mysota.mymain mymain = new jp.co.mysota.mymain();
 			try
 			{
-				mymain.tweetSpeak();
+				mymain.photo();
 			} catch(Exception e)
 			{
 				System.out.println("例外が発生しました:");
