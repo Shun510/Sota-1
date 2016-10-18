@@ -1,9 +1,3 @@
-public class vstoneTest {
-boolean speakBl = true;
-boolean newsBl = false;
-boolean poseBl = false;
-boolean photoBl = false;
-
 try{
 ConfigurationBuilder cb = new ConfigurationBuilder();
 cb.setDebugEnabled(true)
@@ -58,13 +52,12 @@ defaultPose = new CRobotPose();
 						);
 						
 while(true){
-	// User setting
+	//User setting
 	User hostAccount = tw.showUser("@IPLSota");
 	User newsAccount = tw.showUser("@nhk_news");
-	// loop test
-	// count++;
-	// System.out.println("count:" + count);
-	
+	//Loop test
+	count++;
+	System.out.println("count:" + count);
 
 if(tempBl){
 	Status hostStatus = hostAccount.getStatus();
@@ -86,158 +79,120 @@ if(tempBl){
 	}
 }
 if(speakBl){
-
 	Status hostStatus = hostAccount.getStatus();
 	tweet = hostStatus.getText();
-
-	if(tweet.equals("speak")){
-		speakBl = true;
-	}else if(tweet.equals("news")){
-		newsBl = true;
-		speakBl = false;
-	}else if(tweet.equals("pose")){
-		poseBl = true;
-		speakBl = false;
-	}else if(tweet.equals("photo")){
-		photoBl = true;
-		speakBl = false;
-	}
-
-	CRobotUtil.wait((int)10000);
-
+	CRobotUtil.wait((int)6000);
 	switch(tweet){
-	case "news":
-	case "pose":
-	case "photo":
-		break;
-
-	default:
-	if(tweetId != hostStatus.getId()){
-	tweetId = hostStatus.getId();
-	System.out.println("Sota found new tweet");
-	String file = TextToSpeechSota.getTTSFile(tweet,(int)11,(int)13,(int)11);
-	if(file!=null) CPlayWave.PlayWave(file,true);
-	}else{
-	System.out.println("Sota could't find new tweet");
-	}
-	}
-}
-
-if(newsBl){
-
-	Status hostStatus = hostAccount.getStatus();
-	tweet = hostStatus.getText();
-
-	if(tweet.equals("news")){
-		newsBl = true;
-	}else if(tweet.equals("speak")){
-		speakBl = true;
-		newsBl = false;
-
-	}else if(tweet.equals("pose")){
-		poseBl = true;
-		newsBl = false;
-
-	}else if(tweet.equals("photo")){
-		photoBl = true;
-		newsBl = false;
-
-	}
-
-	CRobotUtil.wait((int)10000);
-
-	switch(tweet){
-	case "speak":
-	case "pose":
-	case "photo":
-		break;
-
-	default:
-	Status newsStatus = newsAccount.getStatus();
-	tweet = newsStatus.getText();
-	String[] news = tweet.split("#", -1);
-	if(tweetId != newsStatus.getId()){
-	tweetId = newsStatus.getId();
-	System.out.println("Sota found new news");
-	String file = TextToSpeechSota.getTTSFile(news[0],(int)11,(int)13,(int)11);
-	if(file!=null) CPlayWave.PlayWave(file,true);
-	}else{
-	System.out.println("Sota could't find new news");
-	}
-	}
-}
-
-if(poseBl){
-
-	Status hostStatus = hostAccount.getStatus();
-	tweet = hostStatus.getText();
-
-	if(tweet.equals("pose")){
-		poseBl = true;
-	}else if(tweet.equals("speak")){
-		speakBl = true;
-		poseBl = false;
-
-	}else if(tweet.equals("news")){
-		newsBl = true;
-		poseBl = false;
-
-	}else if(tweet.equals("photo")){
-		photoBl = true;
-		poseBl = false;
-
-	}
-
-	CRobotUtil.wait((int)10000);
-
-	switch(tweet){
-	case "speak":
-	case "news":
-	case "photo":
-		break;
-
-	default:
-	hostStatus = hostAccount.getStatus();
-	tweet = hostStatus.getText();
-	if(tweetId != hostStatus.getId()){
-	tweetId = hostStatus.getId();
-	switch(tweet){
-		case "まっすぐ":
-		case "デフォルト":
-		case "default":
-			System.out.println("Sota found new action");
-			GlobalVariable.motion.play(defaultPose,1000);
-			CRobotUtil.wait(1000);
+		case "news":
+			speakBl = false;
+			newsBl = true;
 			break;
-		case "ひだり":
-		case "左":
-		case "left":
-			System.out.println("Sota found new action");
-			GlobalVariable.motion.play(leftUpPose,1000);
-			CRobotUtil.wait(1000);
+		case "pose":
+			speakBl = false;
+			newsBl = true;
 			break;
-		case "みぎ":
-		case "右":
-		case "right":
-			System.out.println("Sota found new action");
-			GlobalVariable.motion.play(rightUpPose,1000);
-			CRobotUtil.wait(1000);
-			break;
-		case "てれる":
-		case "照れる":
-			System.out.println("Sota found new action");
-			GlobalVariable.motion.play(beShyPose,1000);
-			CRobotUtil.wait(1000);
+		case "photo":
+			speakBl = false;
+			newsBl = true;
 			break;
 		default:
-		System.out.println("Sota could't find new action");
-	}
-	}else{
-	System.out.println("Sota could't find new action");
-	}
+			if(tweetId != hostStatus.getId()){
+			tweetId = hostStatus.getId();
+			System.out.println("Sota found new tweet");
+			String file = TextToSpeechSota.getTTSFile(tweet,(int)11,(int)13,(int)11);
+			if(file!=null) CPlayWave.PlayWave(file,true);
+			}else{
+			System.out.println("Sota could't find new tweet");
+			}
 	}
 }
-
+if(newsBl){
+	Status hostStatus = hostAccount.getStatus();
+	tweet = hostStatus.getText();
+	CRobotUtil.wait((int)6000);
+	switch(tweet){
+		case "speak":
+			newsBl = false;
+			speakBl = true;
+			break;
+		case "pose":
+			newsBl = false;
+			poseBl = true;
+			break;
+		case "photo":
+			newsBl = false;
+			photoBl = true;
+			break;
+		default:
+			Status newsStatus = newsAccount.getStatus();
+			tweet = newsStatus.getText();
+			String[] news = tweet.split("#", -1);
+			if(tweetId != newsStatus.getId()){
+			tweetId = newsStatus.getId();
+			System.out.println("Sota found new news");
+			String file = TextToSpeechSota.getTTSFile(news[0],(int)11,(int)13,(int)11);
+			if(file!=null) CPlayWave.PlayWave(file,true);
+			}else{
+			System.out.println("Sota could't find new news");
+			}
+	}
+}
+if(poseBl){
+	Status hostStatus = hostAccount.getStatus();
+	tweet = hostStatus.getText();
+	CRobotUtil.wait((int)6000);
+	switch(tweet){
+		case "speak":
+			poseBl = false;
+			speakBl = true;
+			break;
+		case "news":
+			poseBl = false;
+			newsBl = true;
+			break;
+		case "photo":
+			poseBl = false;
+			photoBl = true;
+			break;
+		default:
+			if(tweetId != hostStatus.getId()){
+			tweetId = hostStatus.getId();
+			switch(tweet){
+				case "まっすぐ":
+				case "デフォルト":
+				case "default":
+					System.out.println("Sota found new action");
+					GlobalVariable.motion.play(defaultPose,1000);
+					CRobotUtil.wait(1000);
+					break;
+				case "ひだり":
+				case "左":
+				case "left":
+					System.out.println("Sota found new action");
+					GlobalVariable.motion.play(leftUpPose,1000);
+					CRobotUtil.wait(1000);
+					break;
+				case "みぎ":
+				case "右":
+				case "right":
+					System.out.println("Sota found new action");
+					GlobalVariable.motion.play(rightUpPose,1000);
+					CRobotUtil.wait(1000);
+					break;
+				case "てれる":
+				case "照れる":
+					System.out.println("Sota found new action");
+					GlobalVariable.motion.play(beShyPose,1000);
+					CRobotUtil.wait(1000);
+					break;
+				default:
+				System.out.println("Sota could't find new action");
+			}
+			}else{
+			System.out.println("Sota could't find new action");
+			}
+	}
+}
 if(photoBl){
 	GlobalVariable.motion.play(defaultPose,1000);
 	CRobotUtil.wait((int)1000);
@@ -264,5 +219,4 @@ if(photoBl){
 }
 }catch(TwitterException te){
 System.out.println(te);
-}
 }

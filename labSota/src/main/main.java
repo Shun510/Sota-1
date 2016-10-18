@@ -56,7 +56,7 @@ public class main
 			jp.co.mysota.mymain mymain = new jp.co.mysota.mymain();
 			try
 			{
-				mymain.drawOnPhoto();
+				mymain.Runner();
 			} catch(Exception e)
 			{
 				System.out.println("例外が発生しました:");

@@ -55,22 +55,31 @@ while(true){
 	//User setting
 	User hostAccount = tw.showUser("@IPLSota");
 	User newsAccount = tw.showUser("@nhk_news");
+	//Loop test
+	// count++;
+	// System.out.println("count:" + count);
+	// System.out.println(tweetId);
 
 if(tempBl){
 	Status hostStatus = hostAccount.getStatus();
 	tweet = hostStatus.getText();
+	tweetId = hostStatus.getId();
 	
 	System.out.println("tempmode...please tweet task");
+	CRobotUtil.wait((int)1000);
 	
 	if(tweet.equals("speak")){
 		speakBl = true;
 		tempBl = false;
+		tw.destroyStatus(tweetId);
 	}else if(tweet.equals("news")){
 		newsBl = true;
 		tempBl = false;
+		tw.destroyStatus(tweetId);
 	}else if(tweet.equals("pose")){
 		poseBl = true;
 		tempBl = false;
+		tw.destroyStatus(tweetId);
 	}else if(tweet.equals("photo")){
 		//tempBl = true;
 	}
@@ -78,20 +87,30 @@ if(tempBl){
 if(speakBl){
 	Status hostStatus = hostAccount.getStatus();
 	tweet = hostStatus.getText();
-	CRobotUtil.wait((int)5000);
+	
+	CRobotUtil.wait((int)6000);
+	
 	switch(tweet){
 		case "news":
 			speakBl = false;
 			newsBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
 			break;
 		case "pose":
 			speakBl = false;
-			newsBl = true;
+			poseBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
 			break;
 		case "photo":
 			speakBl = false;
-			newsBl = true;
+			photoBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
 			break;
+		case "speak":
+			tw.destroyStatus(tweetId);
 		default:
 			if(tweetId != hostStatus.getId()){
 			tweetId = hostStatus.getId();
@@ -106,27 +125,38 @@ if(speakBl){
 if(newsBl){
 	Status hostStatus = hostAccount.getStatus();
 	tweet = hostStatus.getText();
-	CRobotUtil.wait((int)5000);
+	
+	CRobotUtil.wait((int)6000);
+	
 	switch(tweet){
 		case "speak":
 			newsBl = false;
 			speakBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
 			break;
 		case "pose":
 			newsBl = false;
 			poseBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
 			break;
 		case "photo":
 			newsBl = false;
 			photoBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
 			break;
+		case "news":
 		default:
 			Status newsStatus = newsAccount.getStatus();
 			tweet = newsStatus.getText();
 			String[] news = tweet.split("#", -1);
+			
 			if(tweetId != newsStatus.getId()){
 			tweetId = newsStatus.getId();
 			System.out.println("Sota found new news");
+			
 			String file = TextToSpeechSota.getTTSFile(news[0],(int)11,(int)13,(int)11);
 			if(file!=null) CPlayWave.PlayWave(file,true);
 			}else{
@@ -137,23 +167,32 @@ if(newsBl){
 if(poseBl){
 	Status hostStatus = hostAccount.getStatus();
 	tweet = hostStatus.getText();
-	CRobotUtil.wait((int)5000);
+	
+	CRobotUtil.wait((int)6000);
+	
 	switch(tweet){
 		case "speak":
 			poseBl = false;
 			speakBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
 			break;
 		case "news":
 			poseBl = false;
 			newsBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
 			break;
 		case "photo":
 			poseBl = false;
 			photoBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
 			break;
+		case "pose":
 		default:
 			if(tweetId != hostStatus.getId()){
-			tweetId = hostStatus.getId();
+				tweetId = hostStatus.getId();
 			switch(tweet){
 				case "まっすぐ":
 				case "デフォルト":
@@ -161,6 +200,7 @@ if(poseBl){
 					System.out.println("Sota found new action");
 					GlobalVariable.motion.play(defaultPose,1000);
 					CRobotUtil.wait(1000);
+					tw.destroyStatus(tweetId);
 					break;
 				case "ひだり":
 				case "左":
@@ -168,6 +208,7 @@ if(poseBl){
 					System.out.println("Sota found new action");
 					GlobalVariable.motion.play(leftUpPose,1000);
 					CRobotUtil.wait(1000);
+					tw.destroyStatus(tweetId);
 					break;
 				case "みぎ":
 				case "右":
@@ -175,12 +216,14 @@ if(poseBl){
 					System.out.println("Sota found new action");
 					GlobalVariable.motion.play(rightUpPose,1000);
 					CRobotUtil.wait(1000);
+					tw.destroyStatus(tweetId);
 					break;
 				case "てれる":
 				case "照れる":
 					System.out.println("Sota found new action");
 					GlobalVariable.motion.play(beShyPose,1000);
 					CRobotUtil.wait(1000);
+					tw.destroyStatus(tweetId);
 					break;
 				default:
 				System.out.println("Sota could't find new action");

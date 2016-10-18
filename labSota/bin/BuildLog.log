@@ -1,5 +1,5 @@
 VstoneMagic Build&Execute Message Log
-BuildStart time:2016/10/13 19:03:49
+BuildStart time:2016/10/18 18:56:35
 ビルドを開始します。
 C:\Program Files (x86)\VstoneMagic\jdk\bin\javac.exe  -d "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\bin"  -g  -cp ".;C:\Users\makino\VstoneMagicData\jar\commons-codec-1.10.jar;C:\Users\makino\VstoneMagicData\jar\core-2.2.jar;C:\Users\makino\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\makino\VstoneMagicData\jar\javase-2.2.jar;C:\Users\makino\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\makino\VstoneMagicData\jar\opencv-310.jar;C:\Users\makino\VstoneMagicData\jar\sotalib.jar;C:\Users\makino\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-async-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-core-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-examples-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-media-support-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-stream-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-async-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-core-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-examples-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-media-support-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-stream-4.0.4.jar"  -encoding UTF-8 "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\src\main\main.java" "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\src\jp\co\mysota\mymain.java" 
 
@@ -12,11 +12,11 @@ C:\Program Files (x86)\VstoneMagic\jdk\bin\jar.exe cvfm labSota.jar Manifest.mf 
 マニフェストが追加されました
 main/を追加中です(入=0)(出=0)(0%格納されました)
 main/main$GlobalVariable.classを追加中です(入=1893)(出=874)(53%収縮されました)
-main/main.classを追加中です(入=2193)(出=1193)(45%収縮されました)
+main/main.classを追加中です(入=2188)(出=1187)(45%収縮されました)
 jp/co/mysota/を追加中です(入=0)(出=0)(0%格納されました)
 jp/co/mysota/face.classを追加中です(入=5417)(出=2885)(46%収縮されました)
 jp/co/mysota/faceRegistration.classを追加中です(入=3229)(出=1741)(46%収縮されました)
-jp/co/mysota/mymain.classを追加中です(入=18785)(出=8695)(53%収縮されました)
+jp/co/mysota/mymain.classを追加中です(入=16643)(出=7769)(53%収縮されました)
 
 jarファイルを作成しました。
 
@@ -24,20 +24,20 @@ jarファイルを作成しました。
 
 スタートアップアプリケーションの停止
 echo "STOP_STARTUP" > /home/vstone/vstonemagic/menu.fifoロボットのSFTPへ接続します。
-192.168.1.48@root
+192.168.1.49@root
 ......
 
 
 ファイルの転送
 ロボットにファイルを転送します。
-Connect to 192.168.1.48@root...接続しました。
+Connect to 192.168.1.49@root...接続しました。
 ファイルの転送を開始します。
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-async-4.0.4.jar'
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-core-4.0.4.jar'
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-examples-4.0.4.jar'
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-media-support-4.0.4.jar'
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-stream-4.0.4.jar'
-Send':'labSota.jar'. completed
+Send':'labSota.jar' completed
 
 
 アプリケーション登録用のアーカイブファイルを作成
@@ -47,30 +47,109 @@ Send':'labSota.jar'. completed
 
 jarファイルの実行
 ロボットのSSHへ接続します。
-192.168.1.48@root
+192.168.1.49@root
 java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar labSota.jar 2>&1 &ファイルの転送が完了しました。java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar labSota.jar 2>&1 &
 [1;32mroot@edison:~$[m java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar labSota.jar 2>&1 &
-[1] 1010
+[1] 3490
 [1;32mroot@edison:~$[m デバッグの準備ができました。
 
 jdbの実行
 デバッガを起動します。
-C:\Program Files (x86)\VstoneMagic\jdk\bin\jdb.exe -connect com.sun.jdi.SocketAttach:hostname=192.168.1.48,port=8765
+C:\Program Files (x86)\VstoneMagic\jdk\bin\jdb.exe -connect com.sun.jdi.SocketAttach:hostname=192.168.1.49,port=8765
 Listening for transport dt_socket at address: 8765
 捕捉されないjava.lang.Throwableの設定遅延した捕捉されないjava.lang.Throwableの設定jdbの初期化中...デバッグ実行のスタンバイができました。
 > VMが開始されました: 現在のコール・スタックにフレームがありません[Info][CRoboCamera]class jp.vstone.RobotLib.CSotaMotion
 [Info][SpeechRecog]SpeechRecog
 [Info][CRobotSock]Connected server
 [Info][CRobotMotion]MasterCtrlPeriod 16666
+Sota found new tweet
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1476443226612.wav
+[Info][CPlayWave]Play /var/sota/tts//1476443226612.wav
+Sota could't find new tweet
+Sota found new tweet
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1476426768287.wav
+[Info][CPlayWave]Play /var/sota/tts//1476426768287.wav
+Sota could't find new action
+Sota could't find new action
+Sota found new action
+Sota could't find new action
+Sota could't find new action
+Sota could't find new action
+Sota found new action
+Sota could't find new action
+Sota could't find new action
+Sota found new action
+Sota could't find new action
+Sota found new action
+Sota could't find new action
+Sota could't find new action
+Sota could't find new action
+Sota could't find new action
+Sota found new news
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1476784394062.wav
+[Info][CPlayWave]Play /var/sota/tts//1476784394062.wav
+Sota could't find new news
+Sota could't find new news
+Sota could't find new action
+Sota could't find new action
+Sota could't find new action
+Sota could't find new action
+Sota found new tweet
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1476426768287.wav
+[Info][CPlayWave]Play /var/sota/tts//1476426768287.wav
+Sota could't find new tweet
+Sota could't find new tweet
+Sota could't find new tweet
+Sota could't find new tweet
+Sota could't find new tweet
+Sota could't find new tweet
+Sota could't find new tweet
 Take photo standby...
 [Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1476343397003.wav
 [Info][CPlayWave]Play /var/sota/tts//1476343397003.wav
 [Info][CRoboCamera]initStill
 [Info][CRoboCamera]StartTask MODE_STILL_PIC
-[Info][stillpicture]save picthre file to "/var/sota/photo/test"
-Processing start...
-Processing completed.
-main[1] > アプリケーションが終了しましたexitexit
+[Info][stillpicture]save picthre file to "/var/sota/photo/photo at [19時　1分　36秒]"
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+
+kill ` jps|grep "^[0-9]\+ jar" |awk '{print $1}'`中断します。
+exit
+[1;32mroot@edison:~$[m main[1] > 
+[1;32mroot@edison:~$[m kill ` jps|grepListening for transport dt_socket at address: 8765
+ "^[0-9]\+ jar" |awk '{print $1}'`
+tempmode...please tweet task
+tempmode...please tweet task
+tempmode...please tweet task
+[1;32mroot@edison:~$[m exit
 logout
 
 ロボットとの通信を切断しました。
+failed in sendDebugCommand:quit
+StandardIn がリダイレクトされていません。

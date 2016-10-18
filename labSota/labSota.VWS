@@ -136,12 +136,12 @@
 	</_import>
 	<_isDisableCollidionDetect>false</_isDisableCollidionDetect>
 	<_isSetAutoExecute>false</_isSetAutoExecute>
-	<_mainFuncName>jp.co.mysota.mymain.drawOnPhoto()</_mainFuncName>
+	<_mainFuncName>jp.co.mysota.mymain.Runner()</_mainFuncName>
 	<_manifestClassPath xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
 	<_target>Sota</_target>
 	<_templeteMainClassFilePath>src\mainTemplete.source</_templeteMainClassFilePath>
 	<appPropaty>
-		<_AppTitle>オープンキャンパス</_AppTitle>
+		<_AppTitle>24時間</_AppTitle>
 		<_ApplicationType>App</_ApplicationType>
 		<_ExecOption>-Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/ </_ExecOption>
 		<_StartSoundFile></_StartSoundFile>
@@ -3567,7 +3567,7 @@
 				</uintID>
 			</MotSend>
 			<debugPort>8765</debugPort>
-			<host>192.168.1.48</host>
+			<host>192.168.1.49</host>
 			<password>edison00</password>
 			<platform>Edison</platform>
 			<rootPath>/home/root/</rootPath>
