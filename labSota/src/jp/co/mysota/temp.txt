@@ -81,7 +81,14 @@ if(tempBl){
 		tempBl = false;
 		tw.destroyStatus(tweetId);
 	}else if(tweet.equals("photo")){
-		//tempBl = true;
+		photoBl = true;
+		tempBl = false;
+		tw.destroyStatus(tweetId);
+	}else if(tweet.equals("photo_gray")){
+		photoBl = true;
+		grayOption = true;
+		tempBl = false;
+		tw.destroyStatus(tweetId);
 	}
 }
 if(speakBl){
@@ -106,6 +113,13 @@ if(speakBl){
 		case "photo":
 			speakBl = false;
 			photoBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
+			break;
+		case "photo_gray":
+			speakBl = false;
+			photoBl = true;
+			grayOption = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
@@ -144,6 +158,13 @@ if(newsBl){
 		case "photo":
 			newsBl = false;
 			photoBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
+			break;
+		case "photo_gray":
+			newsBl = false;
+			photoBl = true;
+			grayOption = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
@@ -186,6 +207,13 @@ if(poseBl){
 		case "photo":
 			poseBl = false;
 			photoBl = true;
+			tweetId = hostStatus.getId();
+			tw.destroyStatus(tweetId);
+			break;
+		case "photo_gray":
+			poseBl = false;
+			photoBl = true;
+			grayOption = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
@@ -236,17 +264,38 @@ if(poseBl){
 if(photoBl){
 	GlobalVariable.motion.play(defaultPose,1000);
 	CRobotUtil.wait((int)1000);
+	
+	localDateTime = LocalDateTime.now();
+	LocalDateTime d = (LocalDateTime)localDateTime;
+	year = d.getYear();
+	month = d.getMonthValue();
+	day = d.getDayOfMonth();
+	hour = d.getHour();
+	minute = d.getMinute();
+	folderDate = String.valueOf(year) + String.valueOf(month) + String.valueOf(day);
 
 	System.out.println("Take photo standby...");
 	String photoCount = TextToSpeechSota.getTTSFile("５、４、３、２、１、",(int)6,(int)13,(int)11);
 	if(photoCount!=null) CPlayWave.PlayWave(photoCount,true);
 	
-	time_string = CRobotUtil.getTimeString();
+	File newFolder = new File("/var/sota/photo/" + folderDate);
+	
+	if (newFolder.mkdir()){
+      System.out.println("ディレクトリの作成に成功しました");
+    }else{
+      System.out.println("既にディレクトリが存在しています");
+    }
+	
 	String filepath = "/var/sota/photo/";
-	filepath += "photo" + " at " + "[" + time_string + "]";
+	filepath += folderDate + "/" + "photo at " + hour + ":" + minute;
 	boolean isTrakcing=GlobalVariable.robocam.isAliveFaceDetectTask();
 	if(isTrakcing) GlobalVariable.robocam.StopFaceTraking();
-	GlobalVariable.robocam.initStill(new CameraCapture(CameraCapture.CAP_IMAGE_SIZE_5Mpixel, CameraCapture.CAP_FORMAT_MJPG));
+	if(grayOption){
+		GlobalVariable.robocam.initStill(new CameraCapture(CameraCapture.CAP_IMAGE_SIZE_5Mpixel, CameraCapture.CAP_FORMAT_BYTE_GRAY));
+		grayOption = false;
+	}else{
+		GlobalVariable.robocam.initStill(new CameraCapture(CameraCapture.CAP_IMAGE_SIZE_5Mpixel, CameraCapture.CAP_FORMAT_MJPG));
+	}
 	GlobalVariable.robocam.StillPicture(filepath);
 
 	CRobotUtil.Log("stillpicture","save picthre file to \"" + filepath +"\"");
