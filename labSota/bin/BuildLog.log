@@ -1,7 +1,7 @@
 VstoneMagic Build&Execute Message Log
-BuildStart time:2016/10/24 16:50:02
+BuildStart time:2016/12/12 17:59:26
 ビルドを開始します。
-C:\Program Files (x86)\VstoneMagic\jdk\bin\javac.exe  -d "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\bin"  -g  -cp ".;C:\Users\makino\VstoneMagicData\jar\commons-codec-1.10.jar;C:\Users\makino\VstoneMagicData\jar\core-2.2.jar;C:\Users\makino\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\makino\VstoneMagicData\jar\javase-2.2.jar;C:\Users\makino\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\makino\VstoneMagicData\jar\opencv-310.jar;C:\Users\makino\VstoneMagicData\jar\sotalib.jar;C:\Users\makino\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-async-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-core-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-examples-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-media-support-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-stream-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-async-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-core-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-examples-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-media-support-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-stream-4.0.4.jar"  -encoding UTF-8 "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\src\main\main.java" "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\src\jp\co\mysota\mymain.java" 
+C:\Program Files (x86)\VstoneMagic\jdk\bin\javac.exe  -d "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\bin"  -g  -cp ".;C:\Users\makino\VstoneMagicData\jar\commons-codec-1.10.jar;C:\Users\makino\VstoneMagicData\jar\core-2.2.jar;C:\Users\makino\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\makino\VstoneMagicData\jar\javase-2.2.jar;C:\Users\makino\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\makino\VstoneMagicData\jar\opencv-310.jar;C:\Users\makino\VstoneMagicData\jar\SotaAppManager.jar;C:\Users\makino\VstoneMagicData\jar\sotalib.jar;C:\Users\makino\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-async-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-core-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-examples-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-media-support-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-stream-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-async-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-core-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-examples-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-media-support-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-stream-4.0.4.jar"  -encoding UTF-8 "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\src\main\main.java" "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\src\jp\co\mysota\mymain.java" 
 
 正常にコンパイルできました。
 
@@ -12,11 +12,11 @@ C:\Program Files (x86)\VstoneMagic\jdk\bin\jar.exe cvfm labSota.jar Manifest.mf 
 マニフェストが追加されました
 main/を追加中です(入=0)(出=0)(0%格納されました)
 main/main$GlobalVariable.classを追加中です(入=1893)(出=874)(53%収縮されました)
-main/main.classを追加中です(入=2188)(出=1187)(45%収縮されました)
+main/main.classを追加中です(入=2188)(出=1188)(45%収縮されました)
 jp/co/mysota/を追加中です(入=0)(出=0)(0%格納されました)
 jp/co/mysota/face.classを追加中です(入=5417)(出=2885)(46%収縮されました)
 jp/co/mysota/faceRegistration.classを追加中です(入=3229)(出=1741)(46%収縮されました)
-jp/co/mysota/mymain.classを追加中です(入=17706)(出=8271)(53%収縮されました)
+jp/co/mysota/mymain.classを追加中です(入=15446)(出=7894)(48%収縮されました)
 
 jarファイルを作成しました。
 
@@ -24,20 +24,20 @@ jarファイルを作成しました。
 
 スタートアップアプリケーションの停止
 echo "STOP_STARTUP" > /home/vstone/vstonemagic/menu.fifoロボットのSFTPへ接続します。
-192.168.1.49@root
+192.168.1.24@root
 ......
 
 
 ファイルの転送
 ロボットにファイルを転送します。
-Connect to 192.168.1.49@root...接続しました。
+Connect to 192.168.1.24@root...接続しました。
 ファイルの転送を開始します。
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-async-4.0.4.jar'
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-core-4.0.4.jar'
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-examples-4.0.4.jar'
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-media-support-4.0.4.jar'
 No send:'C:\Users\makino\Documents\twitter4\lib\twitter4j-stream-4.0.4.jar'
-Send':'labSota.jar'. completed
+Send':'labSota.jar' completed
 
 
 アプリケーション登録用のアーカイブファイルを作成
@@ -47,182 +47,256 @@ Send':'labSota.jar'. completed
 
 jarファイルの実行
 ロボットのSSHへ接続します。
-192.168.1.49@root
+192.168.1.24@root
 java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar labSota.jar 2>&1 &ファイルの転送が完了しました。java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar labSota.jar 2>&1 &
 [1;32mroot@edison:~$[m java -Dfile.encoding=UTF8 -Djava.library.path=/usr/local/share/OpenCV/java/  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8765 -jar labSota.jar 2>&1 &
-[1] 2772
+[1] 5195
 [1;32mroot@edison:~$[m デバッグの準備ができました。
 
 jdbの実行
 デバッガを起動します。
-C:\Program Files (x86)\VstoneMagic\jdk\bin\jdb.exe -connect com.sun.jdi.SocketAttach:hostname=192.168.1.49,port=8765
+C:\Program Files (x86)\VstoneMagic\jdk\bin\jdb.exe -connect com.sun.jdi.SocketAttach:hostname=192.168.1.24,port=8765
 Listening for transport dt_socket at address: 8765
 捕捉されないjava.lang.Throwableの設定遅延した捕捉されないjava.lang.Throwableの設定jdbの初期化中...デバッグ実行のスタンバイができました。
 > VMが開始されました: 現在のコール・スタックにフレームがありません[Info][CRoboCamera]class jp.vstone.RobotLib.CSotaMotion
 [Info][SpeechRecog]SpeechRecog
 [Info][CRobotSock]Connected server
 [Info][CRobotMotion]MasterCtrlPeriod 16666
-Sota found new tweet
-[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1477286882742.wav
-[Info][CPlayWave]Play /var/sota/tts//1477286882742.wav
-Sota could't find new tweet
-Sota could't find new tweet
-Take photo standby...
-[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1476343397003.wav
-[Info][CPlayWave]Play /var/sota/tts//1476343397003.wav
-既にディレクトリが存在しています
-[Info][CRoboCamera]initStill
-[Info][CRoboCamera]StartTask MODE_STILL_PIC
-[Info][stillpicture]save picthre file to "/var/sota/photo/20161024/photo at 16:50"
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-Take photo standby...
-[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1476343397003.wav
-[Info][CPlayWave]Play /var/sota/tts//1476343397003.wav
-既にディレクトリが存在しています
-[Info][CRoboCamera]initStill
-[Info][CRoboCamera]StartTask MODE_STILL_PIC
-[Info][CRoboCamera]close Capture
-[Info][stillpicture]save picthre file to "/var/sota/photo/20161024/photo at 16:53"
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-tempmode...please tweet task
-Sota found new news
-[Info][TextToSpeechSota][get:政務活動費 返還などの動き相次ぐ（先週のニュースまとめ） ][speechRate:11][pitch:13]][intonation:11]
-[Info][CPlayWave]Play /dev/shm/wavtemptts0.wav
+loop: 0
+ただいま起床を確認しました。 https://t.co/1VEetDgvyL
+loop: 1
+ただいま起床を確認しました。 https://t.co/1VEetDgvyL
+talkMode : Sota could't find new tweet
+loop: 2
+ただいま起床を確認しました。 https://t.co/1VEetDgvyL
+talkMode : Sota could't find new tweet
+loop: 3
+[Info][CRoboCamera]StartTask MODE_MOTION_DETECTION
+[Info][CRoboCamera]openCapture
+/home/vstone/pux_faceu/bin/ROMfiles/PFID_dict_feature_ha2.bin
+検出値:null
+[Info][CRoboCamera]Strat FaceDetectTask 20
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+[Info][OpenCVHelper]diff:1754
+0.0
+検出値:0.005709635416666667
+0.005709635416666667
+検出値:0.005709635416666667
+0.005709635416666667
+検出値:0.005709635416666667
+0.005709635416666667
+検出値:0.005709635416666667
+0.005709635416666667
+検出値:0.005709635416666667
+[Info][OpenCVHelper]diff:2195
+0.005709635416666667
+検出値:0.0071451822916666664
+0.0071451822916666664
+検出値:0.0071451822916666664
+0.0071451822916666664
+検出値:0.0071451822916666664
+0.0071451822916666664
+検出値:0.0071451822916666664
+0.0071451822916666664
+検出値:0.0071451822916666664
+0.0071451822916666664
+検出値:0.0071451822916666664
+[Info][OpenCVHelper]diff:802
+0.0071451822916666664
+検出値:0.0026106770833333333
+0.0026106770833333333
+検出値:0.0026106770833333333
+0.0026106770833333333
+検出値:0.0026106770833333333
+0.0026106770833333333
+検出値:0.0026106770833333333
+0.0026106770833333333
+検出値:0.0026106770833333333
+0.0026106770833333333
+検出値:0.0026106770833333333
+[Info][OpenCVHelper]diff:50
+0.0026106770833333333
+検出値:1.6276041666666666E-4
+1.6276041666666666E-4
+検出値:1.6276041666666666E-4
+1.6276041666666666E-4
+検出値:1.6276041666666666E-4
+1.6276041666666666E-4
+検出値:1.6276041666666666E-4
+1.6276041666666666E-4
+検出値:1.6276041666666666E-4
+[Info][OpenCVHelper]diff:0
+1.6276041666666666E-4
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+[Info][OpenCVHelper]diff:0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+[Info][OpenCVHelper]diff:0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+[Info][OpenCVHelper]diff:0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+0.0
+検出値:0.0
+[Info][OpenCVHelper]diff:1
+0.0
+検出値:3.2552083333333335E-6
+3.2552083333333335E-6
+検出値:3.2552083333333335E-6
+3.2552083333333335E-6
+検出値:3.2552083333333335E-6
+3.2552083333333335E-6
+検出値:3.2552083333333335E-6
+3.2552083333333335E-6
+検出値:3.2552083333333335E-6
+[Info][OpenCVHelper]diff:3768
+3.2552083333333335E-6
+検出値:0.012265625
+0.012265625
+検出値:0.012265625
+0.012265625
+検出値:0.012265625
+0.012265625
+検出値:0.012265625
+0.012265625
+検出値:0.012265625
+0.012265625
+検出値:0.012265625
+[Info][OpenCVHelper]diff:44230
+0.012265625
+検出値:0.14397786458333334
+0.14397786458333334
+検出値:0.14397786458333334
+0.14397786458333334
+検出値:0.14397786458333334
+0.14397786458333334
+検出値:0.14397786458333334
+0.14397786458333334
+検出値:0.14397786458333334
+0.14397786458333334
+検出値:0.14397786458333334
+[Info][OpenCVHelper]diff:33674
+0.14397786458333334
+検出値:0.10961588541666667
+0.10961588541666667
+検出値:0.10961588541666667
+0.10961588541666667
+検出値:0.10961588541666667
+0.10961588541666667
+検出値:0.10961588541666667
+0.10961588541666667
+検出値:0.10961588541666667
+[Info][OpenCVHelper]diff:93519
+0.10961588541666667
+検出値:0.304423828125
+[Info][TextToSpeechSota][TTS_USE_CACHE] /var/sota/tts//1481524346244.wav
+[Info][CPlayWave]Play /var/sota/tts//1481524346244.wav
+[Info][CPlayWave]isEdison
+[Info][CPlayWave]play------- 5244
+[Info][OpenCVHelper]diff:54119
+[Info][OpenCVHelper]diff:85552
+[Info][OpenCVHelper]diff:249
+[Info][OpenCVHelper]diff:0
+[Info][OpenCVHelper]diff:0
+[Info][OpenCVHelper]diff:0
+0.304423828125
+[Info][CRoboCamera]StopTask MODE_MOTION_DETECTION
+[Info][CRoboCamera]closeCapture 
+[Info][CRoboCamera]Stop  FaceDetectTask 20
+tempMode : Please select(tweet) mode
+loop: 1
+tempMode : Please select(tweet) mode
+loop: 2
+tempMode : Please select(tweet) mode
+loop: 3
+tempMode : Please select(tweet) mode
+loop: 4
+tempMode : Please select(tweet) mode
+loop: 5
+tempMode : Please select(tweet) mode
+loop: 6
+tempMode : Please select(tweet) mode
+loop: 7
+tempMode : Please select(tweet) mode
+loop: 8
+tempMode : Please select(tweet) mode
+loop: 9
+tempMode : Please select(tweet) mode
+loop: 10
+tempMode : Please select(tweet) mode
+loop: 11
+tempMode : Please select(tweet) mode
 
-kill ` jps|grep "^[0-9]\+ jar" |awk '{print $1}'`中断します。
+kill ` jps|grep "^[0-9]\+ jar" |awk '{print $1}'`Listening for transport dt_socket at address: 8765
+中断します。
 exit
 [1;32mroot@edison:~$[m 
-[1;32mroot@edison:~$[m kill ` jps|main[1] > grep "^[0-9]\+ jar"Listening for transport dt_socket at address: 8765
- |awk '{print $1}'`
+[1;32mroot@edison:~$[m kill ` jps|grep "main[1] > ^[0-9]\+ jar" |awk '{print loop: 12
+$1}'`
+tempMode : Please select(tweet) mode
+loop: 13
 [1;32mroot@edison:~$[m exit
 logout
 

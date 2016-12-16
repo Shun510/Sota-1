@@ -10,56 +10,54 @@ TwitterFactory tf = new TwitterFactory(cb.build());
 
 Twitter tw = tf.getInstance();
 
+/* pose登録 */
 defaultPose = new CRobotPose();
-		defaultPose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
-						new Short[]{0,-900,0,900,0,0,0,0}
-						);
-		defaultPose.SetTorque(	new Byte[]{1,2,3,4,5,6,7,8},
-						new Short[]{100,100,100,100,100,100,100,100}
-						);
-		defaultPose.SetLed(	new Byte[]{0,1,2,8,9,10,11,12,13},
-						new Short[]{0,-255,0,180,80,0,180,80,0}
-						);
-	leftUpPose = new CRobotPose();
-		leftUpPose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
-						new Short[]{0,500,0,900,0,0,0,0}
-						);
-		leftUpPose.SetTorque(	new Byte[]{1,2,3,4,5,6,7,8},
-						new Short[]{100,100,100,100,100,100,100,100}
-						);
-		leftUpPose.SetLed(	new Byte[]{0,1,2,8,9,10,11,12,13},
-						new Short[]{0,-255,0,180,80,0,180,80,0}
-						);
-	rightUpPose = new CRobotPose();
-		rightUpPose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
-						new Short[]{0,-900,0,-500,0,0,0,0}
-						);
-		rightUpPose.SetTorque(	new Byte[]{1,2,3,4,5,6,7,8},
-						new Short[]{100,100,100,100,100,100,100,100}
-						);
-		rightUpPose.SetLed(	new Byte[]{0,1,2,8,9,10,11,12,13},
-						new Short[]{0,-255,0,180,80,0,180,80,0}
-						);
-	beShyPose = new CRobotPose();					
-		beShyPose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
-						new Short[]{-15,-14,-900,14,900,2,50,-2}
-						);
-		beShyPose.SetTorque(	new Byte[]{1,2,3,4,5,6,7,8},
-						new Short[]{100,100,100,100,100,100,100,100}
-						);
-		beShyPose.SetLed(	new Byte[]{0,1,2,8,9,10,11,12,13},
-						new Short[]{0,-255,0,140,30,30,140,30,30}
-						);
+	defaultPose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
+					new Short[]{0,-900,0,900,0,0,0,0}
+					);
+	defaultPose.SetTorque(	new Byte[]{1,2,3,4,5,6,7,8},
+					new Short[]{100,100,100,100,100,100,100,100}
+					);
+	defaultPose.SetLed(	new Byte[]{0,1,2,8,9,10,11,12,13},
+					new Short[]{0,-255,0,180,80,0,180,80,0}
+					);
+leftUpPose = new CRobotPose();
+	leftUpPose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
+					new Short[]{0,500,0,900,0,0,0,0}
+					);
+	leftUpPose.SetTorque(	new Byte[]{1,2,3,4,5,6,7,8},
+					new Short[]{100,100,100,100,100,100,100,100}
+					);
+	leftUpPose.SetLed(	new Byte[]{0,1,2,8,9,10,11,12,13},
+					new Short[]{0,-255,0,180,80,0,180,80,0}
+					);
+rightUpPose = new CRobotPose();
+	rightUpPose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
+					new Short[]{0,-900,0,-500,0,0,0,0}
+					);
+	rightUpPose.SetTorque(	new Byte[]{1,2,3,4,5,6,7,8},
+					new Short[]{100,100,100,100,100,100,100,100}
+					);
+	rightUpPose.SetLed(	new Byte[]{0,1,2,8,9,10,11,12,13},
+					new Short[]{0,-255,0,180,80,0,180,80,0}
+					);
+beShyPose = new CRobotPose();					
+	beShyPose.SetPose(	new Byte[]{1,2,3,4,5,6,7,8},
+					new Short[]{-15,-14,-900,14,900,2,50,-2}
+					);
+	beShyPose.SetTorque(	new Byte[]{1,2,3,4,5,6,7,8},
+					new Short[]{100,100,100,100,100,100,100,100}
+					);
+	beShyPose.SetLed(	new Byte[]{0,1,2,8,9,10,11,12,13},
+					new Short[]{0,-255,0,140,30,30,140,30,30}
+					);
 						
 while(true){
-	//User setting
+	/* ユーザー設定 */
 	User hostAccount = tw.showUser("@IPLSota");
 	User newsAccount = tw.showUser("@nhk_news");
-	//Loop test
-	// count++;
-	// System.out.println("count:" + count);
-	// System.out.println(tweetId);
 
+/* tempモード */
 if(tempBl){
 	Status hostStatus = hostAccount.getStatus();
 	tweet = hostStatus.getText();
@@ -68,8 +66,8 @@ if(tempBl){
 	System.out.println("tempMode : Please select(tweet) mode");
 	CRobotUtil.wait((int)1000);
 	
-	if(tweet.equals("speak")){
-		speakBl = true;
+	if(tweet.equals("talk")){
+		talkBl = true;
 		tempBl = false;
 		tw.destroyStatus(tweetId);
 	}else if(tweet.equals("news")){
@@ -84,68 +82,72 @@ if(tempBl){
 		photoBl = true;
 		tempBl = false;
 		tw.destroyStatus(tweetId);
-	}else if(tweet.equals("photo_gray")){
+	}else if(tweet.equals("photo_option")){	
 		photoBl = true;
-		grayOption = true;
+		photoOptionBl = true;
 		tempBl = false;
 		tw.destroyStatus(tweetId);
 	}
 }
-if(speakBl){
+/* talkモード */
+if(talkBl){
 	Status hostStatus = hostAccount.getStatus();
 	tweet = hostStatus.getText();
 	
 	CRobotUtil.wait((int)6000);
 	
+	/* フラグ取得・初期化 */
 	switch(tweet){
 		case "news":
-			speakBl = false;
+			talkBl = false;
 			newsBl = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
 		case "pose":
-			speakBl = false;
+			talkBl = false;
 			poseBl = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
 		case "photo":
-			speakBl = false;
+			talkBl = false;
 			photoBl = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
-		case "photo_gray":
-			speakBl = false;
+		case "photo_option":
+			talkBl = false;
 			photoBl = true;
-			grayOption = true;
+			photoOptionBl = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
-		case "speak":
+		case "talk":
 			tw.destroyStatus(tweetId);
 		default:
 			if(tweetId != hostStatus.getId()){
 			tweetId = hostStatus.getId();
-			System.out.println("speakMode : Sota found new tweet");
+			System.out.println("talkMode : Sota found new tweet");
 			String file = TextToSpeechSota.getTTSFile(tweet,(int)11,(int)13,(int)11);
 			if(file!=null) CPlayWave.PlayWave(file,true);
 			}else{
-			System.out.println("speakMode : Sota could't find new tweet");
+			System.out.println("talkMode : Sota could't find new tweet");
 			}
 	}
 }
+/* newsモード */
 if(newsBl){
 	Status hostStatus = hostAccount.getStatus();
 	tweet = hostStatus.getText();
 	
 	CRobotUtil.wait((int)6000);
 	
+	/* フラグ取得・初期化 */
 	switch(tweet){
-		case "speak":
+		case "talk":
 			newsBl = false;
-			speakBl = true;
+			talkBl = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
@@ -161,10 +163,10 @@ if(newsBl){
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
-		case "photo_gray":
-			newsBl = false;
+		case "photo_option":
+			talkBl = false;
 			photoBl = true;
-			grayOption = true;
+			photoOptionBl = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
@@ -172,7 +174,7 @@ if(newsBl){
 		default:
 			Status newsStatus = newsAccount.getStatus();
 			tweet = newsStatus.getText();
-			String[] news = tweet.split("#", -1);
+			String[] news = tweet.split("#", -1);	//NHKnewsの場合の処理
 			
 			if(tweetId != newsStatus.getId()){
 			tweetId = newsStatus.getId();
@@ -185,16 +187,18 @@ if(newsBl){
 			}
 	}
 }
+/* poseモード */
 if(poseBl){
 	Status hostStatus = hostAccount.getStatus();
 	tweet = hostStatus.getText();
 	
 	CRobotUtil.wait((int)6000);
 	
+	/* フラグ取得・初期化 */
 	switch(tweet){
-		case "speak":
+		case "talk":
 			poseBl = false;
-			speakBl = true;
+			talkBl = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
@@ -210,10 +214,10 @@ if(poseBl){
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
-		case "photo_gray":
-			poseBl = false;
+		case "photo_option":
+			talkBl = false;
 			photoBl = true;
-			grayOption = true;
+			photoOptionBl = true;
 			tweetId = hostStatus.getId();
 			tw.destroyStatus(tweetId);
 			break;
@@ -261,6 +265,7 @@ if(poseBl){
 			}
 	}
 }
+/* photoモード */
 if(photoBl){
 	GlobalVariable.motion.play(defaultPose,1000);
 	CRobotUtil.wait((int)1000);
@@ -274,10 +279,7 @@ if(photoBl){
 	minute = d.getMinute();
 	folderDate = String.valueOf(year) + String.valueOf(month) + String.valueOf(day);
 
-	System.out.println("photoMode : Take photo standby...");
-	String photoCount = TextToSpeechSota.getTTSFile("５、４、３、２、１、",(int)6,(int)13,(int)11);
-	if(photoCount!=null) CPlayWave.PlayWave(photoCount,true);
-	
+	/* 日付フォルダ作成 path指定*/
 	File newFolder = new File("/var/sota/photo/" + folderDate);
 	
 	if (newFolder.mkdir()){
@@ -285,23 +287,80 @@ if(photoBl){
     }else{
       System.out.println("photoMode : Directory already exists");
     }
-	
 	String filepath = "/var/sota/photo/";
 	filepath += folderDate + "/" + "photo at " + hour + ":" + minute;
+	
+	/* 写真撮影 */
+	System.out.println("photoMode : Take photo standby...");
+	String photoCount = TextToSpeechSota.getTTSFile("５、４、３、２、１、",(int)6,(int)13,(int)11);
+	if(photoCount!=null) CPlayWave.PlayWave(photoCount,true);
+	
 	boolean isTrakcing=GlobalVariable.robocam.isAliveFaceDetectTask();
 	if(isTrakcing) GlobalVariable.robocam.StopFaceTraking();
-	if(grayOption){
-		GlobalVariable.robocam.initStill(new CameraCapture(CameraCapture.CAP_IMAGE_SIZE_5Mpixel, CameraCapture.CAP_FORMAT_BYTE_GRAY));
-		grayOption = false;
-	}else{
-		GlobalVariable.robocam.initStill(new CameraCapture(CameraCapture.CAP_IMAGE_SIZE_5Mpixel, CameraCapture.CAP_FORMAT_MJPG));
-	}
+	
+	GlobalVariable.robocam.initStill(new CameraCapture(CameraCapture.CAP_IMAGE_SIZE_5Mpixel, CameraCapture.CAP_FORMAT_MJPG));
 	GlobalVariable.robocam.StillPicture(filepath);
-
 	CRobotUtil.Log("stillpicture","save picthre file to \"" + filepath +"\"");
 	if(isTrakcing) GlobalVariable.robocam.StartFaceTraking();
 	
+	/* 処理option */
+	if(photoOptionBl){
+		System.out.println("photoMode : Shift to optionMode");
+		System.out.println("photoMode : Please tweet option command(20sec)");
+	
+		CRobotUtil.wait((int)20000);
+		
+		hostAccount = tw.showUser("@IPLSota");
+		Status hostStatus = hostAccount.getStatus();
+		tweet = hostStatus.getText();
+			
+		switch(tweet){
+			case "erode":	//膨張処理
+				System.out.println("photoMode : Selected [erode]");
+				//initialize
+				kernel = 5;
+				tweetId = hostStatus.getId();
+				path_out = filepath + "(erode).jpg";
+				Mat element = Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new Size(kernel, kernel));
+				//process
+				Mat mat_src = new Mat();
+				mat_src = Imgcodecs.imread(filepath + ".jpg");
+				Mat mat_clone = mat_src.clone();
+				Imgproc.erode(mat_src, mat_clone, element);
+				//save file
+				Imgcodecs.imwrite(path_out, mat_clone);
+				
+				tw.destroyStatus(tweetId);
+				System.out.println("photoMode : Finish erosion");
+				break;
+			case "dilate":	//収縮処理
+				System.out.println("photoMode : Selected [dilate]");
+				//process
+				//save file
+				tw.destroyStatus(tweetId);
+				break;
+			case "closing":	//膨張処理から収縮処理
+				System.out.println("photoMode : Selected [closing]");
+				//process
+				//save file
+				tw.destroyStatus(tweetId);
+				break;
+			case "opening":	//収縮処理から膨張処理
+				System.out.println("photoMode : Selected [opening]");
+				//process
+				//save file
+				tw.destroyStatus(tweetId);
+				break;
+			default:
+				System.out.println("photoMode : Sota could't find option command");
+		}
+	}else{
+		System.out.println("photoMode : Finish taking");
+	}
+	
+	/* フラグ初期化 */
 	photoBl = false;
+	photoOptionBl = false;
 	tempBl = true;
 	System.out.println("photoMode : Shift to tempMode");
 	

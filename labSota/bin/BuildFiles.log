@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <BuildOmitCheck xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <javacPath>C:\Program Files (x86)\VstoneMagic\jdk\bin\javac.exe</javacPath>
-  <argument> -d "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\bin"  -g  -cp ".;C:\Users\makino\VstoneMagicData\jar\commons-codec-1.10.jar;C:\Users\makino\VstoneMagicData\jar\core-2.2.jar;C:\Users\makino\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\makino\VstoneMagicData\jar\javase-2.2.jar;C:\Users\makino\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\makino\VstoneMagicData\jar\opencv-310.jar;C:\Users\makino\VstoneMagicData\jar\sotalib.jar;C:\Users\makino\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-async-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-core-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-examples-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-media-support-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-stream-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-async-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-core-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-examples-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-media-support-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-stream-4.0.4.jar"  -encoding UTF-8 </argument>
+  <argument> -d "C:\Users\makino\Documents\VstoneMagic\WorkSpace\labSota\bin"  -g  -cp ".;C:\Users\makino\VstoneMagicData\jar\commons-codec-1.10.jar;C:\Users\makino\VstoneMagicData\jar\core-2.2.jar;C:\Users\makino\VstoneMagicData\jar\gson-2.6.1.jar;C:\Users\makino\VstoneMagicData\jar\javase-2.2.jar;C:\Users\makino\VstoneMagicData\jar\jna-4.1.0.jar;C:\Users\makino\VstoneMagicData\jar\opencv-310.jar;C:\Users\makino\VstoneMagicData\jar\SotaAppManager.jar;C:\Users\makino\VstoneMagicData\jar\sotalib.jar;C:\Users\makino\VstoneMagicData\jar\SRClientHelper.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-async-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-core-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-examples-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-media-support-4.0.4.jar;C:\Users\makino\VstoneMagicData\jar\twitter4j-stream-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-async-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-core-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-examples-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-media-support-4.0.4.jar;C:\Users\makino\Documents\twitter4\lib\twitter4j-stream-4.0.4.jar"  -encoding UTF-8 </argument>
   <files>
     <FileData>
       <path>jp\co\mysota\mymain.java</path>
-      <timestamp>2016-10-24T16:50:02.2920016+09:00</timestamp>
-      <size>36877</size>
+      <timestamp>2016-12-12T17:59:26.8853171+09:00</timestamp>
+      <size>33015</size>
       <ignore>false</ignore>
     </FileData>
   </files>
